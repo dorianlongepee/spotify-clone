@@ -9,6 +9,7 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
+      tailwindcss: {},
       autoprefixer: {},
     },
   },
@@ -20,11 +21,22 @@ export default defineNuxtConfig({
     },
   ],
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
+    '@nuxtjs/google-fonts',
+    '@nuxt/image',
+  ],
 
   eslint: {
     config: {
       stylistic: true,
+    },
+  },
+
+  googleFonts: {
+    families: {
+      Figtree: '300..900',
     },
   },
 })
