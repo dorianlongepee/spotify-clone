@@ -14,18 +14,13 @@ export default defineNuxtConfig({
     },
   },
 
-  components: [
-    {
-      path: '~/components',
-      pathPrefix: false,
-    },
-  ],
-
   modules: [
-    '@nuxtjs/tailwindcss',
     '@nuxt/eslint',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
+    '@nuxtjs/color-mode',
   ],
 
   eslint: {
@@ -38,5 +33,22 @@ export default defineNuxtConfig({
     families: {
       Figtree: '300..900',
     },
+  },
+
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: '',
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: './components/ui',
+  },
+
+  colorMode: {
+    preference: 'dark',
+    classSuffix: '',
   },
 })
