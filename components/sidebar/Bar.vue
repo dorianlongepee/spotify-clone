@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import { Home, Search } from 'lucide-vue-next'
+
+const isCollapsed = ref(false)
+
+function onCollapse() {
+  isCollapsed.value = true
+}
+function onExpand() {
+  isCollapsed.value = false
+}
 </script>
 
 <template>
@@ -11,11 +20,14 @@ import { Home, Search } from 'lucide-vue-next'
     :min-size="18"
     :max-size="60"
     class="flex flex-col gap-2"
+    @collapse="onCollapse"
+    @expand="onExpand"
   >
     <div class="bg-backgroundBase rounded-xs px-3 py-2 flex flex-col items-start">
       <SidebarMenuItem
         to="dashboard"
         text="Accueil"
+        :is-collapsed="isCollapsed"
       >
         <template #icon>
           <Home />
@@ -24,6 +36,7 @@ import { Home, Search } from 'lucide-vue-next'
       <SidebarMenuItem
         to="search"
         text="Rechercher"
+        :is-collapsed="isCollapsed"
       >
         <template #icon>
           <Search />
