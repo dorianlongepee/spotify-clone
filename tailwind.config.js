@@ -23,6 +23,10 @@ module.exports = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
+        backgroundBase: 'hsl(var(--background-base))',
+        backgroundHighlight: 'hsl(var(--background-highlight))',
+        backgroundElevatedBase: 'hsl(var(--background-elevated-base))',
+        backgroundElevatedHighlight: 'hsl(var(--background-elevated-highlight))',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -58,6 +62,7 @@ module.exports = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        xs: 'calc(var(--radius) - 8px)',
       },
       keyframes: {
         'accordion-down': {
